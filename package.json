@@ -1,0 +1,64 @@
+{
+  "name": "cursorkit",
+  "version": "0.1.0",
+  "description": "Mouse cursors as SVG with the click point as data, for CSS cursors, product demos and coding agents. Original drawings, zero dependencies.",
+  "keywords": [
+    "cursor",
+    "cursors",
+    "mouse-cursor",
+    "pointer",
+    "svg",
+    "css-cursor",
+    "hotspot",
+    "agent-skill"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pallaoro/cursorkit.git"
+  },
+  "homepage": "https://github.com/pallaoro/cursorkit#readme",
+  "bugs": "https://github.com/pallaoro/cursorkit/issues",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./cursors.json": "./cursors.json",
+    "./svg/*": "./svg/*",
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "cursorkit": "bin/cursorkit.mjs"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "svg",
+    "cursors.json",
+    "llms.txt",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && node scripts/build-assets.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test test/*.test.mjs",
+    "demo": "python3 -m http.server 4173",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/node": "^22.0.0"
+  },
+  "packageManager": "pnpm@11.10.0"
+}

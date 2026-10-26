@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cursorkit</title>
+<style>
+  :root { color-scheme: light dark; --bg: #f4f4f6; --tile: #fff; --ink: #111; --muted: #666; --line: #e2e2e6; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #141417; --tile: #1e1e23; --ink: #eee; --muted: #999; --line: #2c2c33; } }
+  body { margin: 0; padding: 32px 16px; background: var(--bg); color: var(--ink); font: 14px/1.5 system-ui, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  p { margin: 0 0 24px; color: var(--muted); }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 28px 0 10px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+  .tile { display: grid; place-items: center; gap: 8px; padding: 18px 8px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--tile); }
+  .tile.dark { background: #202026; color: #eee; border-color: #2c2c33; }
+  .tile img { position: relative; }
+  .tile code { font-size: 12px; }
+  .frame { position: relative; line-height: 0; }
+  .dot { position: absolute; width: 4px; height: 4px; margin: -2px 0 0 -2px; border-radius: 50%; background: #e11; }
+</style>
+</head>
+<body>
+<main>
+  <h1>cursorkit</h1>
+  <p>Hover a tile to use that cursor. The red dot is the hotspot: the point that clicks.</p>
+  <h2>Light</h2>
+  <div class="grid" id="light"></div>
+  <h2>Dark</h2>
+  <div class="grid" id="dark"></div>
+</main>
+<script type="module">
+  import { cursor, names } from "../dist/index.js";
+
+  for (const theme of ["light", "dark"]) {
+    const grid = document.getElementById(theme);
+    for (const name of names) {
+      const c = cursor(name, { theme });
+      const big = cursor(name, { theme, size: 3 });
+      const tile = document.createElement("div");
+      tile.className = `tile ${theme}`;
+      tile.dataset.name = name;
+      tile.style.cursor = c.css;
+      tile.innerHTML =
+        `<span class="frame"><img alt="" width="${big.width}" height="${big.height}" src="${big.dataUri}">` +
+        `<span class="dot" style="left:${big.hotspot.x}px;top:${big.hotspot.y}px"></span></span><code>${name}</code>`;
+      grid.append(tile);
+    }
+  }
+</script>
+</body>
+</html>

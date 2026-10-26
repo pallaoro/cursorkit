@@ -5,11 +5,11 @@ Mouse cursors as **SVG**, with the click point as data.
 <img src="assets/preview.svg" alt="The twelve cursors on a light row and a dark row: arrow, pointing hand, open hand, closed hand, text beam, crosshair, not-allowed, move, and four resize arrows" width="768">
 
 ```bash
-npm i cursorkit
+npm i @pallaoro/cursorkit
 ```
 
 ```ts
-import { cursor } from "cursorkit";
+import { cursor } from "@pallaoro/cursorkit";
 
 el.style.cursor = cursor("pointer").css;
 // url("data:image/svg+xml,…") 11 4, pointer
@@ -95,24 +95,26 @@ Sizes and hotspots are for the static files (size 1, with shadow); light and dar
 Every cursor is a static file, and `cursors.json` holds its hotspot:
 
 ```css
-.canvas { cursor: url("https://cdn.jsdelivr.net/npm/cursorkit@0.1/svg/light/grab.svg") 15 14, grab; }
+.canvas { cursor: url("https://cdn.jsdelivr.net/npm/@pallaoro/cursorkit@0.1/svg/light/grab.svg") 15 14, grab; }
 ```
 
 ```
-https://cdn.jsdelivr.net/npm/cursorkit@0.1/svg/{light|dark}/{name}.svg
-https://cdn.jsdelivr.net/npm/cursorkit@0.1/cursors.json
+https://cdn.jsdelivr.net/npm/@pallaoro/cursorkit@0.1/svg/{light|dark}/{name}.svg
+https://cdn.jsdelivr.net/npm/@pallaoro/cursorkit@0.1/cursors.json
 ```
 
 ## CLI
 
 ```bash
-$ npx cursorkit pointer > public/cursors/pointer.svg
+$ npx @pallaoro/cursorkit pointer > public/cursors/pointer.svg
 hotspot 11 4 · 29×31 · falls back to pointer
 
-$ npx cursorkit arrow --css --theme dark
-$ npx cursorkit grab --size 2 --json
-$ npx cursorkit list
+$ npx @pallaoro/cursorkit arrow --css --theme dark
+$ npx @pallaoro/cursorkit grab --size 2 --json
+$ npx @pallaoro/cursorkit list
 ```
+
+Once the package is installed, the command is just `cursorkit`.
 
 The hotspot goes to stderr, so redirecting stdout gives a clean file.
 

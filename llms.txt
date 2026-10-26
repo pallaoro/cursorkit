@@ -10,9 +10,9 @@ arrow (default), pointer, grab, grabbing, text, crosshair, not-allowed, move, ew
 
 ## Use
 
-- npm: `import { cursor } from "cursorkit"`; `cursor(name, { theme?: "light" | "dark", size?: number, shadow?: boolean, ink?: string, paper?: string })` returns `{ svg, dataUri, width, height, hotspot: { x, y }, css }`. `css` is a full value for the CSS cursor property.
-- CLI: `npx cursorkit <name> [--css | --json] [--theme dark] [--size n] [--no-shadow]`; `npx cursorkit list`. Without flags it prints the SVG and writes the hotspot to stderr.
-- CDN: `https://cdn.jsdelivr.net/npm/cursorkit@0.1/svg/{light|dark}/{name}.svg`, hotspots in `https://cdn.jsdelivr.net/npm/cursorkit@0.1/cursors.json`.
+- npm: `import { cursor } from "@pallaoro/cursorkit"`; `cursor(name, { theme?: "light" | "dark", size?: number, shadow?: boolean, ink?: string, paper?: string })` returns `{ svg, dataUri, width, height, hotspot: { x, y }, css }`. `css` is a full value for the CSS cursor property.
+- CLI: `npx @pallaoro/cursorkit <name> [--css | --json] [--theme dark] [--size n] [--no-shadow]`; `npx @pallaoro/cursorkit list`. Without flags it prints the SVG and writes the hotspot to stderr.
+- CDN: `https://cdn.jsdelivr.net/npm/@pallaoro/cursorkit@0.1/svg/{light|dark}/{name}.svg`, hotspots in `https://cdn.jsdelivr.net/npm/@pallaoro/cursorkit@0.1/cursors.json`.
 
 ## Placing
 

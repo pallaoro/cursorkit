@@ -24,10 +24,10 @@ Twelve cursors as SVG, each with its **hotspot**, the pixel that clicks: `arrow`
 
 Pick whichever fits the project.
 
-**npm** (`npm i cursorkit`):
+**npm** (`npm i @pallaoro/cursorkit`):
 
 ```ts
-import { cursor } from "cursorkit";
+import { cursor } from "@pallaoro/cursorkit";
 const c = cursor("pointer", { theme: "light", size: 1.5 });
 // c.svg, c.dataUri, c.width, c.height, c.hotspot {x, y}, c.css
 ```
@@ -35,16 +35,16 @@ const c = cursor("pointer", { theme: "light", size: 1.5 });
 **CLI**, to write a file into the project:
 
 ```bash
-npx cursorkit pointer > public/cursors/pointer.svg   # prints "hotspot 11 4 · …" to stderr
-npx cursorkit arrow --css --theme dark                # a full CSS cursor value
-npx cursorkit grab --size 2 --json                    # svg + hotspot as JSON
+npx @pallaoro/cursorkit pointer > public/cursors/pointer.svg   # prints "hotspot 11 4 · …" to stderr
+npx @pallaoro/cursorkit arrow --css --theme dark                # a full CSS cursor value
+npx @pallaoro/cursorkit grab --size 2 --json                    # svg + hotspot as JSON
 ```
 
 **CDN**, no install. Size 1, shadow included:
 
 ```
-https://cdn.jsdelivr.net/npm/cursorkit@0.1/svg/{light|dark}/{name}.svg
-https://cdn.jsdelivr.net/npm/cursorkit@0.1/cursors.json   # hotspot of every file
+https://cdn.jsdelivr.net/npm/@pallaoro/cursorkit@0.1/svg/{light|dark}/{name}.svg
+https://cdn.jsdelivr.net/npm/@pallaoro/cursorkit@0.1/cursors.json   # hotspot of every file
 ```
 
 | Name | Hotspot (CDN files) | | Name | Hotspot (CDN files) |

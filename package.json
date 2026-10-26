@@ -1,5 +1,5 @@
 {
-  "name": "cursorkit",
+  "name": "@pallaoro/cursorkit",
   "version": "0.1.0",
   "description": "Mouse cursors as SVG with the click point as data, for CSS cursors, product demos and coding agents. Original drawings, zero dependencies.",
   "keywords": [

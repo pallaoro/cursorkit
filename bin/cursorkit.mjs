@@ -5,9 +5,9 @@
  * Exists so an agent (or a shell) can drop a correct cursor into a project
  * without drawing one:
  *
- *   npx cursorkit pointer > public/cursors/pointer.svg
- *   npx cursorkit arrow --css --theme dark
- *   npx cursorkit list
+ *   npx @pallaoro/cursorkit pointer > public/cursors/pointer.svg
+ *   npx @pallaoro/cursorkit arrow --css --theme dark
+ *   npx @pallaoro/cursorkit list
  */
 
 import { cursor, fallbackOf, names } from "../dist/index.js";
